@@ -7,3 +7,67 @@ title: "Homework 01"
 
 Explore the week's [TidyTuesday](https://github.com/rfordatascience/tidytuesday) challenge. Develop a research question, then answer it through a short data story with [effective visualization(s)]({{< var effective-viz-url >}}).  Provide sufficient background for readers to grasp your narrative.
 
+I will not pretend to have extensive knowledge of the basis of this dataset, or what capital stock actually is. However, I understand that it could be interesting to see how company size relates to how much capital stock a company has. in theory, this should be somewhat proportional; I'd like to investigate. 
+
+```{r}
+library(tidyverse)
+library(scales)
+```
+
+
+```{r}
+# initial cleaning (given)
+tuesdata <- tidytuesdayR::tt_load(2026, week = 4)
+
+companies <- tuesdata$companies
+legal_nature <- tuesdata$legal_nature
+qualifications <- tuesdata$qualifications
+size <- tuesdata$size
+
+```
+
+
+```{r}
+# Clean the data more
+companies_clean <- companies %>%
+  filter(!is.na(company_size) & !is.na(capital_stock))
+```
+
+
+```{r}
+# Calculate summary stats
+sum_stats <- companies_clean %>%
+  group_by(company_size) %>%
+  summarise( n = n(), median_capital = median(capital_stock), mean_capital = mean(capital_stock),
+    q25 = quantile(capital_stock, 0.25), q75 = quantile(capital_stock, 0.75))
+
+print(sum_stats)
+```
+
+
+```{r}
+# making the plot
+plot_pretty <- companies_clean %>%
+  ggplot(aes(x = company_size, y = capital_stock, fill = company_size))+ 
+  geom_boxplot(alpha = 0.7, outlier.shape = NA) + 
+  geom_jitter(alpha = 0.1, width = 0.2, size = 0.5, color = "gray30") + # Kelsey says geom_jitter is better than geom_point and shes right
+  
+# Put on a log scale as capital stock varies widely
+scale_y_log10(labels = label_number(prefix = "R$", suffix = "", scale = 1, big.mark = ","), breaks = scales::trans_breaks("log10", function(x) 10^x)) +
+# Make it an Effective Viz!
+ scale_fill_manual(values = c("micro-enterprise" = "green", "small-enterprise" = "yellow", "other" = "darkblue")) + 
+  labs(title = "Capital Stock by Company Size in Brazil", subtitle = "Declared share capital (BRL) across different enterprise sizes", x = "Company Size ", y = "Capital Stock (BRL)",
+    caption = "Visualization: [Olivia Seiler] | #TidyTuesday | Data: TidyTuesday 2026-01-27")
+
+plot_pretty
+
+# Save plot
+ggsave(filename = "company_size_capital_stock.png", plot = plot_pretty, width = 10, height = 7,
+  dpi = 300, bg = "white")
+```
+
+This visualization reveals massive inequality in capital allocation among different enterprise sizes, with values spanning a very large range within each category. This raises important questions about data quality and classification accuracy. Why do some "micro-enterprises" declare capital stock in the billions? Overall, this plot effectively demonstrates that company size categories may not strongly correlate with declared capital stock in Brazil, with substantial overlap across all groups indicating that legal classifications may be outdated or misaligned with economic reality.
+
+
+
+

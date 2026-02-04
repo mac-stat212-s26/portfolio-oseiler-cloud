@@ -68,8 +68,8 @@ book:
       chapters:
       - tt/2025-07-08.qmd
       - tt/2025-07-15.qmd
-      - hw01-tt.qmd
-      - company_size_capital_stock.png
+      - tt/hw01-tt.qmd
+      - tt/company_size_capital_stock.png
 
     - part: "Pre-Class Learnings"
       chapters:
@@ -79,7 +79,7 @@ book:
       chapters:
       - ica/ica-sample1.qmd
       - ica/ica-sample2.qmd
-      - cleaning.qmd
+      - ica/cleaning.qmd
       data:
       - weather.csv
       processed:

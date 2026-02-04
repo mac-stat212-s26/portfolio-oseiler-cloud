@@ -79,7 +79,9 @@ Examine the [NYTimes 2015 Temperature Visualization (html)](https://www.nytimes.
 Every variable in the codebook seems to be represented in the plot in some way.
 
 
-- How do these variables map to aesthetics of the visual elements, eg, position, size, shape, and color of glyphs?
+- How do these variables map to aesthetics of the visual elements, eg, position, size, shape, and color of glyphs? \\
+
+The variables recording temperature are the histograms in the plot, temperature and Month are the Axes, and the record high/lows have arrows pointing to them on the plot. This is similar in the precipitation plot, however  
 
 
 
@@ -134,8 +136,11 @@ Look at the [`geom_linerange` documentation page](https://ggplot2.tidyverse.org/
 ![SFO Weather Records in 2011](https://hash-mac.github.io/stat212site-sp26/images/sfo_first_graph.png)
 
 ```{r weather_plot_temp_records}
-P <- ggplot(weather, aes(x = Day, y = RecordLow, RecordHigh)) + geom_point()
-    theme_classic() + # Add a histogram to 
+P <- ggplot(weather, aes(x = dateInYear)) + 
+  geom_linerange(aes(ymin = RecordLow, ymax = RecordHigh), color = '#ECEBE3') +
+  theme_classic()
+
+P
 ```
 
 ::: {.callout-tip title="Keyboard Shortcuts"}
@@ -147,9 +152,6 @@ As you work on this plot, try to use some new [keyboard shortcuts](https://hash-
 :::
 
 
-
-
-
 ## Exercise 3
 
 In your visualization, also display the usual temperatures (`NormalLow` and `NormalHigh`) and actual 2011 temperatures (`Low` and `High`). Your plot should look like the one below. The hex code of the color used for the usual temperatures is `"#C8B8BA"` and for the color used for actual temperatures is `"#A90248"`.
@@ -157,7 +159,13 @@ In your visualization, also display the usual temperatures (`NormalLow` and `Nor
 ![SFO observed, Average, and Record Daily Temperatures in 2011](https://hash-mac.github.io/stat212site-sp26/images/sfo_second_graph.png)
 
 ```{r weather_plot_temp_all}
+P <- ggplot(weather, aes(x = dateInYear)) + 
+  geom_linerange(aes(ymin = RecordLow, ymax = RecordHigh), color = '#ECEBE3') +
+  geom_linerange(aes(ymin = NormalLow, ymax = NormalHigh), color = '#C8B8BA') +
+  geom_linerange(aes(ymin = Low, ymax = High), color = '#A90248', linewidth = 1.05) +
+  theme_classic()
 
+P
 
 ```
 
@@ -169,13 +177,25 @@ If you'd like finer control of the width of these lines/rectangles, check out th
 
 ## Exercise 4
 
-Recreate the visual demarcations of the months by adding vertical lines separating the months.  Brainstorm how we might draw those vertical lines. What `geom` might we use?  What subset of the data might we use in that `geom` layer to draw lines only at the month divisions? 
+Recreate the visual demarcations of the months by adding vertical lines separating the months.  Brainstorm how we might draw those vertical lines. What `geom` might we use?  What subset of the data might we use in that `geom` layer to draw lines only at the month divisions? \\
+
+I think we can use either geom_abline or geom_hline here. We could maybe use the 'Day' variable and put the line at the first day for each month? We could also use brute force and use DayInYear and identify the days which are the end of months and pass in 12 different lines.  
 
 ```{r }
+Month_lines <- weather %>%
+  filter(Day == 1)
+
+P <- ggplot(weather, aes(x = dateInYear)) + 
+  geom_linerange(aes(ymin = RecordLow, ymax = RecordHigh), color = '#ECEBE3') +
+  geom_linerange(aes(ymin = NormalLow, ymax = NormalHigh), color = '#C8B8BA') +
+  geom_linerange(aes(ymin = Low, ymax = High), color = '#A90248', linewidth = 1.05) +
+  geom_vline(data = Month_lines, aes(xintercept = dateInYear ), alpha = 0.3) +
+  theme_classic()
+
+P
 
 
 ```
-
 
 
 ## Exercise 5
@@ -186,6 +206,27 @@ Change the x-axis labels so that the month names display in the center of each m
 R has built-in variables called `month.abb` and `month.name` that contain abbreviated and full month names.
 :::
 
+```{r}
+Month_lines <- weather %>%
+  filter(Day == 1)
+
+Month_center <- weather %>%
+  group_by(Month) %>%
+  summarize(med = median(dateInYear))
+  
+
+
+P <- ggplot(weather, aes(x = dateInYear)) + 
+  geom_linerange(aes(ymin = RecordLow, ymax = RecordHigh), color = '#ECEBE3') +
+  geom_linerange(aes(ymin = NormalLow, ymax = NormalHigh), color = '#C8B8BA') +
+  geom_linerange(aes(ymin = Low, ymax = High), color = '#A90248', linewidth = 1.05) +
+  geom_vline(data = Month_lines, aes(xintercept = dateInYear ), alpha = 0.3) +
+  scale_x_continuous(breaks = Month_center$med, labels = month.abb) +
+  theme_classic()
+
+P
+
+```
 
 Try to figuring out this new challenge using search engines and LLMs:
 

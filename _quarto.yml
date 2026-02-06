@@ -84,6 +84,11 @@ book:
       - weather.csv
       processed:
       - weather_clean.csv
+      04_adv_maps:
+      code:
+      - 04-adv-maps-1-notes.qmd
+      figures:
+      - tc_map_zoom.png
 
     - part: "Extras"
       chapters:

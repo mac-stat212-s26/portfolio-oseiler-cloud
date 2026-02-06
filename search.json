@@ -43,6 +43,17 @@
     ]
   },
   {
+    "objectID": "tt/hw01-tt.html",
+    "href": "tt/hw01-tt.html",
+    "title": "Homework 01",
+    "section": "",
+    "text": "TidyTuesday Section\nExplore the week’s TidyTuesday challenge. Develop a research question, then answer it through a short data story with effective visualization(s). Provide sufficient background for readers to grasp your narrative.\nI will not pretend to have extensive knowledge of the basis of this dataset, or what capital stock actually is. However, I understand that it could be interesting to see how company size relates to how much capital stock a company has. in theory, this should be somewhat proportional; I’d like to investigate.\nCodelibrary(tidyverse)\nlibrary(scales)\nCode# initial cleaning (given)\ntuesdata &lt;- tidytuesdayR::tt_load(2026, week = 4)\n\ncompanies &lt;- tuesdata$companies\nlegal_nature &lt;- tuesdata$legal_nature\nqualifications &lt;- tuesdata$qualifications\nsize &lt;- tuesdata$size\nCode# Clean the data more\ncompanies_clean &lt;- companies %&gt;%\n  filter(!is.na(company_size) & !is.na(capital_stock))\nCode# Calculate summary stats\nsum_stats &lt;- companies_clean %&gt;%\n  group_by(company_size) %&gt;%\n  summarise( n = n(), median_capital = median(capital_stock), mean_capital = mean(capital_stock),\n    q25 = quantile(capital_stock, 0.25), q75 = quantile(capital_stock, 0.75))\n\nprint(sum_stats)\n\n# A tibble: 3 × 6\n  company_size         n median_capital mean_capital    q25     q75\n  &lt;chr&gt;            &lt;int&gt;          &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;\n1 micro-enterprise 66202         300000    21291946. 200000  500000\n2 other            42520        1037169   500429583. 460297 3553019\n3 small-enterprise 32610         350000   837193374. 205000  700000\nCode# making the plot\nplot_pretty &lt;- companies_clean %&gt;%\n  ggplot(aes(x = company_size, y = capital_stock, fill = company_size))+ \n  geom_boxplot(alpha = 0.7, outlier.shape = NA) + \n  geom_jitter(alpha = 0.1, width = 0.2, size = 0.5, color = \"gray30\") + # Kelsey says geom_jitter is better than geom_point and shes right\n  \n# Put on a log scale as capital stock varies widely\nscale_y_log10(labels = label_number(prefix = \"R$\", suffix = \"\", scale = 1, big.mark = \",\"), breaks = scales::trans_breaks(\"log10\", function(x) 10^x)) +\n# Make it an Effective Viz!\n scale_fill_manual(values = c(\"micro-enterprise\" = \"green\", \"small-enterprise\" = \"yellow\", \"other\" = \"darkblue\")) + \n  labs(title = \"Capital Stock by Company Size in Brazil\", subtitle = \"Declared share capital (BRL) across different enterprise sizes\", x = \"Company Size \", y = \"Capital Stock (BRL)\",\n    caption = \"Visualization: [Olivia Seiler] | #TidyTuesday | Data: TidyTuesday 2026-01-27\")\n\nplot_pretty\n\n\n\n\n\n\nCode# Save plot\nggsave(filename = \"company_size_capital_stock.png\", plot = plot_pretty, width = 10, height = 7,\n  dpi = 300, bg = \"white\")\nThis visualization reveals massive inequality in capital allocation among different enterprise sizes, with values spanning a very large range within each category. This raises important questions about data quality and classification accuracy. Why do some “micro-enterprises” declare capital stock in the billions? Overall, this plot effectively demonstrates that company size categories may not strongly correlate with declared capital stock in Brazil, with substantial overlap across all groups indicating that legal classifications may be outdated or misaligned with economic reality.",
+    "crumbs": [
+      "TidyTuesday",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Homework 01</span>"
+    ]
+  },
+  {
     "objectID": "pcl/pcl.html",
     "href": "pcl/pcl.html",
     "title": "Pre-Class Learning Summaries",
@@ -50,7 +61,7 @@
     "text": "R",
     "crumbs": [
       "Pre-Class Learnings",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-Class Learning Summaries</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Pre-Class Learning Summaries</span>"
     ]
   },
   {
@@ -61,7 +72,7 @@
     "text": "Quarto\n\n\n\nfrom qmd4sci.njtierney.com",
     "crumbs": [
       "Pre-Class Learnings",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-Class Learning Summaries</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Pre-Class Learning Summaries</span>"
     ]
   },
   {
@@ -72,7 +83,7 @@
     "text": "Add content here",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>ICA Sample 1</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ICA Sample 1</span>"
     ]
   },
   {
@@ -83,7 +94,29 @@
     "text": "Add content here",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ICA Sample 2</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>ICA Sample 2</span>"
+    ]
+  },
+  {
+    "objectID": "ica/cleaning.html",
+    "href": "ica/cleaning.html",
+    "title": "Cleaning SFO Weather Data",
+    "section": "",
+    "text": "Exercise\nCarryout the following steps to clean and save the San Francisco Weather data. Make sure to download and add the data file to your portfolio repository as instructed.\nCodelibrary(tidyverse)\nlibrary(readr)\nCodeweather &lt;- read_csv(\"data/weather.csv\")\nhead(weather)\n\n# A tibble: 6 × 18\n  Month   Day   Low  High NormalLow NormalHigh RecordLow LowYr RecordHigh HiYear\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n1    11    20    48    55        48         62        35  1964         69   2005\n2     6    16    52    68        53         70        46  1952         90   1961\n3     5     9    47    63        50         66        41  1950         88   1993\n4    10    26    47    69        52         69        39  1954         89   2003\n5     9    27    55    82        55         73        47  1955         96   2010\n6     7     6    52    70        54         71        47  1953         86   1957\n# ℹ 8 more variables: Precip &lt;dbl&gt;, RecordPrecip &lt;dbl&gt;, PrecipYr &lt;dbl&gt;,\n#   date &lt;chr&gt;, Record &lt;lgl&gt;, RecordText &lt;chr&gt;, RecordP &lt;lgl&gt;, CulmPrec &lt;dbl&gt;\nCodeweather_clean &lt;- weather %&gt;% \n    mutate(PrecipYr = na_if(PrecipYr, 99999))\nCodeweather_clean %&gt;%\n    mutate(dateInYear = yday(mdy(date)))\n\n# A tibble: 365 × 19\n   Month   Day   Low  High NormalLow NormalHigh RecordLow LowYr RecordHigh\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;\n 1    11    20    48    55        48         62        35  1964         69\n 2     6    16    52    68        53         70        46  1952         90\n 3     5     9    47    63        50         66        41  1950         88\n 4    10    26    47    69        52         69        39  1954         89\n 5     9    27    55    82        55         73        47  1955         96\n 6     7     6    52    70        54         71        47  1953         86\n 7    11     3    48    60        51         66        40  1971         84\n 8     3    26    47    58        47         62        38  1980         79\n 9    10     4    57    66        55         72        47  1989         95\n10    11    26    49    59        47         60        36  1952         76\n# ℹ 355 more rows\n# ℹ 10 more variables: HiYear &lt;dbl&gt;, Precip &lt;dbl&gt;, RecordPrecip &lt;dbl&gt;,\n#   PrecipYr &lt;dbl&gt;, date &lt;chr&gt;, Record &lt;lgl&gt;, RecordText &lt;chr&gt;, RecordP &lt;lgl&gt;,\n#   CulmPrec &lt;dbl&gt;, dateInYear &lt;dbl&gt;\nCodeweather_clean %&gt;%\n  mutate(month_name = month.abb[Month]) %&gt;%\n    head()\n\n# A tibble: 6 × 19\n  Month   Day   Low  High NormalLow NormalHigh RecordLow LowYr RecordHigh HiYear\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n1    11    20    48    55        48         62        35  1964         69   2005\n2     6    16    52    68        53         70        46  1952         90   1961\n3     5     9    47    63        50         66        41  1950         88   1993\n4    10    26    47    69        52         69        39  1954         89   2003\n5     9    27    55    82        55         73        47  1955         96   2010\n6     7     6    52    70        54         71        47  1953         86   1957\n# ℹ 9 more variables: Precip &lt;dbl&gt;, RecordPrecip &lt;dbl&gt;, PrecipYr &lt;dbl&gt;,\n#   date &lt;chr&gt;, Record &lt;lgl&gt;, RecordText &lt;chr&gt;, RecordP &lt;lgl&gt;, CulmPrec &lt;dbl&gt;,\n#   month_name &lt;chr&gt;\nCodewrite_csv(weather_clean, file = \"data/processed/weather_clean.csv\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Cleaning SFO Weather Data</span>"
+    ]
+  },
+  {
+    "objectID": "ica/cleaning.html#exercise",
+    "href": "ica/cleaning.html#exercise",
+    "title": "Cleaning SFO Weather Data",
+    "section": "",
+    "text": "Read in the weather data in this file with the correct relative file path after you move it to the instructed location.\n\n\n\nThere is a variable that has values that don’t make sense in the data context. Figure out which variable this is and clean it up by making those values missing using na_if().\n\n\n\nCreate a variable called dateInYear that indicates the day of the year (1-365) for each case. (Jan 1 should be 1, and Dec 31 should be 365).\n\n\n\nCreate a variable called month_name that shows the 3-letter abbreviation for each case.\n\n\n\nSave the wrangled data to the data/processed/ folder using write_csv(). Name this file weather_clean.csv. Look up the documentation for this function by typing ?write_csv in the Console. You’ll need to write an appropriate relative path.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Cleaning SFO Weather Data</span>"
     ]
   },
   {
@@ -94,7 +127,7 @@
     "text": "Add content here",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Extra Sample 1</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Sample 1</span>"
     ]
   },
   {
@@ -105,7 +138,7 @@
     "text": "Add content here",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Extra Sample 2</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extra Sample 2</span>"
     ]
   }
 ]

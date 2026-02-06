@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.25">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>TidyTuesday Sample 1 – COMP/STAT212 Portfolio</title>
+<title>Homework 01 – COMP/STAT212 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,15 +54,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tt/2025-07-15.html" rel="next">
-<link href="../pv/pv-01.html" rel="prev">
+<link href="../tt/company_size_capital_stock.png" rel="next">
+<link href="../tt/2025-07-15.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -82,8 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-16eaaa9b790cfaabc94008ee33c52662.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-2b3e8dfe8c7d4b2781b388bd72db8514.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-16eaaa9b790cfaabc94008ee33c52662.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-16eaaa9b790cfaabc94008ee33c52662.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -109,9 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-<script type="text/javascript" charset="UTF-8">
+}</script><script type="text/javascript" charset="UTF-8">
 document.addEventListener('DOMContentLoaded', function () {
 cookieconsent.run({
   "notice_banner_type":"simple",
@@ -126,14 +119,9 @@ cookieconsent.run({
 "language":"en"
   });
 });
-</script> 
-  
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="../style/custom.css">
 </head>
-
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -299,30 +287,22 @@ cookieconsent.run({
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tt/2025-07-08.html">TidyTuesday</a></li><li class="breadcrumb-item"><a href="../tt/2025-07-08.html"><span class="chapter-title">TidyTuesday Sample 1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tt/2025-07-08.html">TidyTuesday</a></li><li class="breadcrumb-item"><a href="../tt/hw01-tt.html"><span class="chapter-title">Homework 01</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/sidebar-logo.png" alt="Random negative space illustration" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../assets/sidebar-logo.png" alt="Random negative space illustration" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+      <img src="../assets/sidebar-logo.png" alt="Random negative space illustration" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../assets/sidebar-logo.png" alt="Random negative space illustration" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Olivia Seiler</a> 
         <div class="sidebar-tools-main">
@@ -342,7 +322,7 @@ cookieconsent.run({
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
   </div>
@@ -355,14 +335,14 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pv/pv-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Professional Viz</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -371,10 +351,10 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tt/2025-07-08.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">TidyTuesday Sample 1</span></a>
+  <a href="../tt/2025-07-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">TidyTuesday Sample 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -384,11 +364,11 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tt/hw01-tt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Homework 01</span></a>
+  <a href="../tt/hw01-tt.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Homework 01</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -397,14 +377,14 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pcl/pcl.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pre-Class Learning Summaries</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -413,8 +393,8 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-sample1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ICA Sample 1</span></a>
   </div>
@@ -430,7 +410,7 @@ cookieconsent.run({
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -439,8 +419,8 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../extra/extra-sample1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Extra Sample 1</span></a>
   </div>
@@ -451,27 +431,26 @@ cookieconsent.run({
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#tidytuesday-section" id="toc-tidytuesday-section" class="nav-link active" data-scroll-target="#tidytuesday-section">TidyTuesday Section</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tt/2025-07-08.html">TidyTuesday</a></li><li class="breadcrumb-item"><a href="../tt/2025-07-08.html"><span class="chapter-title">TidyTuesday Sample 1</span></a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">TidyTuesday Sample 1</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tt/2025-07-08.html">TidyTuesday</a></li><li class="breadcrumb-item"><a href="../tt/hw01-tt.html"><span class="chapter-title">Homework 01</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Homework 01</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -480,17 +459,79 @@ cookieconsent.run({
   
 
 
-</header>
-
-
-<p>Add content here</p>
+</header><section id="tidytuesday-section" class="level2"><h2 class="anchored" data-anchor-id="tidytuesday-section">TidyTuesday Section</h2>
+<p>Explore the week’s <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a> challenge. Develop a research question, then answer it through a short data story with <a href="?var:effective-viz-url">effective visualization(s)</a>. Provide sufficient background for readers to grasp your narrative.</p>
+<p>I will not pretend to have extensive knowledge of the basis of this dataset, or what capital stock actually is. However, I understand that it could be interesting to see how company size relates to how much capital stock a company has. in theory, this should be somewhat proportional; I’d like to investigate.</p>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(scales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># initial cleaning (given)</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2026</span>, <span class="at">week =</span> <span class="dv">4</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>companies <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>companies</span>
+<span id="cb2-5"><a href="#cb2-5"></a>legal_nature <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>legal_nature</span>
+<span id="cb2-6"><a href="#cb2-6"></a>qualifications <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>qualifications</span>
+<span id="cb2-7"><a href="#cb2-7"></a>size <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>size</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Clean the data more</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>companies_clean <span class="ot">&lt;-</span> companies <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(capital_stock))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Calculate summary stats</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>sum_stats <span class="ot">&lt;-</span> companies_clean <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">group_by</span>(company_size) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">summarise</span>( <span class="at">n =</span> <span class="fu">n</span>(), <span class="at">median_capital =</span> <span class="fu">median</span>(capital_stock), <span class="at">mean_capital =</span> <span class="fu">mean</span>(capital_stock),</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="at">q25 =</span> <span class="fu">quantile</span>(capital_stock, <span class="fl">0.25</span>), <span class="at">q75 =</span> <span class="fu">quantile</span>(capital_stock, <span class="fl">0.75</span>))</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">print</span>(sum_stats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  company_size         n median_capital mean_capital    q25     q75
+  &lt;chr&gt;            &lt;int&gt;          &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+1 micro-enterprise 66202         300000    21291946. 200000  500000
+2 other            42520        1037169   500429583. 460297 3553019
+3 small-enterprise 32610         350000   837193374. 205000  700000</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># making the plot</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>plot_pretty <span class="ot">&lt;-</span> companies_clean <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> company_size, <span class="at">y =</span> capital_stock, <span class="at">fill =</span> company_size))<span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray30"</span>) <span class="sc">+</span> <span class="co"># Kelsey says geom_jitter is better than geom_point and shes right</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  </span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># Put on a log scale as capital stock varies widely</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">scale_y_log10</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">prefix =</span> <span class="st">"R$"</span>, <span class="at">suffix =</span> <span class="st">""</span>, <span class="at">scale =</span> <span class="dv">1</span>, <span class="at">big.mark =</span> <span class="st">","</span>), <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">trans_breaks</span>(<span class="st">"log10"</span>, <span class="cf">function</span>(x) <span class="dv">10</span><span class="sc">^</span>x)) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co"># Make it an Effective Viz!</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"micro-enterprise"</span> <span class="ot">=</span> <span class="st">"green"</span>, <span class="st">"small-enterprise"</span> <span class="ot">=</span> <span class="st">"yellow"</span>, <span class="st">"other"</span> <span class="ot">=</span> <span class="st">"darkblue"</span>)) <span class="sc">+</span> </span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Capital Stock by Company Size in Brazil"</span>, <span class="at">subtitle =</span> <span class="st">"Declared share capital (BRL) across different enterprise sizes"</span>, <span class="at">x =</span> <span class="st">"Company Size "</span>, <span class="at">y =</span> <span class="st">"Capital Stock (BRL)"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12"></a>    <span class="at">caption =</span> <span class="st">"Visualization: [Olivia Seiler] | #TidyTuesday | Data: TidyTuesday 2026-01-27"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14"></a>plot_pretty</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="hw01-tt_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Save plot</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"company_size_capital_stock.png"</span>, <span class="at">plot =</span> plot_pretty, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>,</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>This visualization reveals massive inequality in capital allocation among different enterprise sizes, with values spanning a very large range within each category. This raises important questions about data quality and classification accuracy. Why do some “micro-enterprises” declare capital stock in the billions? Overall, this plot effectively demonstrates that company size categories may not strongly correlate with declared capital stock in Brazil, with substantial overlap across all groups indicating that legal classifications may be outdated or misaligned with economic reality.</p>
 
 
 <!-- -->
 
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -958,28 +999,93 @@ cookieconsent.run({
       }
     }
   });
-  </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-      <a href="../pv/pv-01.html" class="pagination-link" aria-label="Professional Viz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Professional Viz</span></span>
+  </script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+      <a href="../tt/2025-07-15.html" class="pagination-link" aria-label="TidyTuesday Sample 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">TidyTuesday Sample 2</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tt/2025-07-15.html" class="pagination-link" aria-label="TidyTuesday Sample 2">
-        <span class="nav-page-text"><span class="chapter-title">TidyTuesday Sample 2</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../tt/company_size_capital_stock.png" class="pagination-link" aria-label="">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "TidyTuesday Sample 1"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>Add content here</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="an">title:</span><span class="co"> "Homework 01"</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">---</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="fu">## TidyTuesday Section</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a>Explore the week's <span class="co">[</span><span class="ot">TidyTuesday</span><span class="co">](https://github.com/rfordatascience/tidytuesday)</span> challenge. Develop a research question, then answer it through a short data story with <span class="co">[</span><span class="ot">effective visualization(s)</span><span class="co">]({{&lt; var effective-viz-url &gt;}})</span>.  Provide sufficient background for readers to grasp your narrative.</span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a>I will not pretend to have extensive knowledge of the basis of this dataset, or what capital stock actually is. However, I understand that it could be interesting to see how company size relates to how much capital stock a company has. in theory, this should be somewhat proportional; I'd like to investigate. </span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="in">```{r}</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="fu">library</span>(scales)</span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="in">```</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a></span>
+<span id="cb8-19"><a href="#cb8-19"></a></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="in">```{r}</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co"># initial cleaning (given)</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2026</span>, <span class="at">week =</span> <span class="dv">4</span>)</span>
+<span id="cb8-25"><a href="#cb8-25"></a></span>
+<span id="cb8-26"><a href="#cb8-26"></a>companies <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>companies</span>
+<span id="cb8-27"><a href="#cb8-27"></a>legal_nature <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>legal_nature</span>
+<span id="cb8-28"><a href="#cb8-28"></a>qualifications <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>qualifications</span>
+<span id="cb8-29"><a href="#cb8-29"></a>size <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>size</span>
+<span id="cb8-30"><a href="#cb8-30"></a></span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="in">```</span></span>
+<span id="cb8-32"><a href="#cb8-32"></a></span>
+<span id="cb8-33"><a href="#cb8-33"></a></span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="in">```{r}</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a><span class="co"># Clean the data more</span></span>
+<span id="cb8-38"><a href="#cb8-38"></a>companies_clean <span class="ot">&lt;-</span> companies <span class="sc">%&gt;%</span></span>
+<span id="cb8-39"><a href="#cb8-39"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(capital_stock))</span>
+<span id="cb8-40"><a href="#cb8-40"></a><span class="in">```</span></span>
+<span id="cb8-41"><a href="#cb8-41"></a></span>
+<span id="cb8-42"><a href="#cb8-42"></a></span>
+<span id="cb8-45"><a href="#cb8-45"></a><span class="in">```{r}</span></span>
+<span id="cb8-46"><a href="#cb8-46"></a><span class="co"># Calculate summary stats</span></span>
+<span id="cb8-47"><a href="#cb8-47"></a>sum_stats <span class="ot">&lt;-</span> companies_clean <span class="sc">%&gt;%</span></span>
+<span id="cb8-48"><a href="#cb8-48"></a>  <span class="fu">group_by</span>(company_size) <span class="sc">%&gt;%</span></span>
+<span id="cb8-49"><a href="#cb8-49"></a>  <span class="fu">summarise</span>( <span class="at">n =</span> <span class="fu">n</span>(), <span class="at">median_capital =</span> <span class="fu">median</span>(capital_stock), <span class="at">mean_capital =</span> <span class="fu">mean</span>(capital_stock),</span>
+<span id="cb8-50"><a href="#cb8-50"></a>    <span class="at">q25 =</span> <span class="fu">quantile</span>(capital_stock, <span class="fl">0.25</span>), <span class="at">q75 =</span> <span class="fu">quantile</span>(capital_stock, <span class="fl">0.75</span>))</span>
+<span id="cb8-51"><a href="#cb8-51"></a></span>
+<span id="cb8-52"><a href="#cb8-52"></a><span class="fu">print</span>(sum_stats)</span>
+<span id="cb8-53"><a href="#cb8-53"></a><span class="in">```</span></span>
+<span id="cb8-54"><a href="#cb8-54"></a></span>
+<span id="cb8-55"><a href="#cb8-55"></a></span>
+<span id="cb8-58"><a href="#cb8-58"></a><span class="in">```{r}</span></span>
+<span id="cb8-59"><a href="#cb8-59"></a><span class="co"># making the plot</span></span>
+<span id="cb8-60"><a href="#cb8-60"></a>plot_pretty <span class="ot">&lt;-</span> companies_clean <span class="sc">%&gt;%</span></span>
+<span id="cb8-61"><a href="#cb8-61"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> company_size, <span class="at">y =</span> capital_stock, <span class="at">fill =</span> company_size))<span class="sc">+</span> </span>
+<span id="cb8-62"><a href="#cb8-62"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb8-63"><a href="#cb8-63"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray30"</span>) <span class="sc">+</span> <span class="co"># Kelsey says geom_jitter is better than geom_point and shes right</span></span>
+<span id="cb8-64"><a href="#cb8-64"></a>  </span>
+<span id="cb8-65"><a href="#cb8-65"></a><span class="co"># Put on a log scale as capital stock varies widely</span></span>
+<span id="cb8-66"><a href="#cb8-66"></a><span class="fu">scale_y_log10</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">prefix =</span> <span class="st">"R$"</span>, <span class="at">suffix =</span> <span class="st">""</span>, <span class="at">scale =</span> <span class="dv">1</span>, <span class="at">big.mark =</span> <span class="st">","</span>), <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">trans_breaks</span>(<span class="st">"log10"</span>, <span class="cf">function</span>(x) <span class="dv">10</span><span class="sc">^</span>x)) <span class="sc">+</span></span>
+<span id="cb8-67"><a href="#cb8-67"></a><span class="co"># Make it an Effective Viz!</span></span>
+<span id="cb8-68"><a href="#cb8-68"></a> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"micro-enterprise"</span> <span class="ot">=</span> <span class="st">"green"</span>, <span class="st">"small-enterprise"</span> <span class="ot">=</span> <span class="st">"yellow"</span>, <span class="st">"other"</span> <span class="ot">=</span> <span class="st">"darkblue"</span>)) <span class="sc">+</span> </span>
+<span id="cb8-69"><a href="#cb8-69"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Capital Stock by Company Size in Brazil"</span>, <span class="at">subtitle =</span> <span class="st">"Declared share capital (BRL) across different enterprise sizes"</span>, <span class="at">x =</span> <span class="st">"Company Size "</span>, <span class="at">y =</span> <span class="st">"Capital Stock (BRL)"</span>,</span>
+<span id="cb8-70"><a href="#cb8-70"></a>    <span class="at">caption =</span> <span class="st">"Visualization: [Olivia Seiler] | #TidyTuesday | Data: TidyTuesday 2026-01-27"</span>)</span>
+<span id="cb8-71"><a href="#cb8-71"></a></span>
+<span id="cb8-72"><a href="#cb8-72"></a>plot_pretty</span>
+<span id="cb8-73"><a href="#cb8-73"></a></span>
+<span id="cb8-74"><a href="#cb8-74"></a><span class="co"># Save plot</span></span>
+<span id="cb8-75"><a href="#cb8-75"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"company_size_capital_stock.png"</span>, <span class="at">plot =</span> plot_pretty, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>,</span>
+<span id="cb8-76"><a href="#cb8-76"></a>  <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">"white"</span>)</span>
+<span id="cb8-77"><a href="#cb8-77"></a><span class="in">```</span></span>
+<span id="cb8-78"><a href="#cb8-78"></a></span>
+<span id="cb8-79"><a href="#cb8-79"></a>This visualization reveals massive inequality in capital allocation among different enterprise sizes, with values spanning a very large range within each category. This raises important questions about data quality and classification accuracy. Why do some "micro-enterprises" declare capital stock in the billions? Overall, this plot effectively demonstrates that company size categories may not strongly correlate with declared capital stock in Brazil, with substantial overlap across all groups indicating that legal classifications may be outdated or misaligned with economic reality.</span>
+<span id="cb8-80"><a href="#cb8-80"></a></span>
+<span id="cb8-81"><a href="#cb8-81"></a></span>
+<span id="cb8-82"><a href="#cb8-82"></a></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -991,8 +1097,6 @@ cookieconsent.run({
     </div>
   </div>
 </footer>
-
-
 
 
 <script src="../site_libs/quarto-html/zenscroll-min.js"></script>

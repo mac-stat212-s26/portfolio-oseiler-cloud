@@ -83,6 +83,7 @@ book:
       - ica/03-adv-ggplot-notes.qmd
       - ica/06-wrangling-1-notes.qmd
       - ica/07-wrangling-2-notes.qmd
+      - ica/08-missing-data-notes.qmd
       data:
       - weather.csv
       processed:

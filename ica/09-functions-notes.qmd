@@ -427,7 +427,7 @@ group_means <- function(df, group_var, mean_var) {
 
 6. **Prop function** Create a new version of `dplyr::count()` that also shows proportions instead of just sample sizes. The function should be able to handle counting by multiple variables. Test your function with two different sets of arguments using the `diamonds` dataset.
 
-```{r}
+#```{r}
 
 prop <- function(df, group_var, mean_var) {
   df %>%
@@ -438,7 +438,7 @@ prop <- function(df, group_var, mean_var) {
 }
 prop(diamonds, group_var = cut, mean_var = carat)
 
-```
+#```
 
 7. **Scatterplot + Smooth function** Create a function that creates a scatterplot from a user-supplied dataset with user-supplied x and y variables. The plot should also show a curvy smoothing line in blue, and a linear smoothing line in red. Test your function using the `diamonds` dataset.
 

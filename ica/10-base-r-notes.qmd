@@ -12,6 +12,10 @@ By the end of this lesson, you should be able to:
 - Use the `str()` function to examine the structure of an unfamiliar object and extract components from the object
 - Apply printing strategies to streamline the debugging and development process
 
+```{r}
+library(tidyverse)
+```
+
 
 ## Common R Object Structures 
 

@@ -227,7 +227,7 @@ str_c("Month ", 1:12, ":", month.name)
 
 3. On the `diamonds` dataset, fit stratified models of price vs. carat, model separately estimated for each value of `cut`, and store the fitted models in a list storage container.
 
-```{r}
+```
 data(diamonds)
 
 # Fit models of price vs. carat separately for each value of cut

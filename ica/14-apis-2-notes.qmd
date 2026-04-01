@@ -156,7 +156,7 @@ We will use the `httr2` package to build up a full URL from its parts because of
     - The backticks around `for` are needed because `for` is a reserved word in R (for for-loops). You'll need backticks whenever the key name has special characters (like spaces, dashes).
     - We can see from [here](https://www.census.gov/data/developers/guidance/api-user-guide.Help_&_Contact_Us.html) that providing an API key is achieved with `key=YOUR_API_KEY`.
 
-```{r httr2_census}
+```
 req <- request("https://api.census.gov") |> 
     req_url_path_append("data") |> 
     req_url_path_append("2019") |> 
@@ -175,8 +175,8 @@ req <- request("https://api.census.gov") |>
 
 Once we've fully constructed our request, we can use `req_perform()` to send out the API request and get a **response**.
 
-```{r census_request}
-resp <- req_perform(req)
+```{r}
+#resp <- req_perform(req)
 ```
 
 ### Getting a response with `httr2`
@@ -187,15 +187,15 @@ We see from `Content-Type` that the format of the response is something called J
     - This function uses `fromJSON()` behind the scenes.
     - Without `simplifyVector = TRUE`, the JSON is read in as a list. 
 
-```{r census_json}
-resp_json_df <- resp |> resp_body_json(simplifyVector = TRUE)
+```{r}
+#resp_json_df <- resp |> resp_body_json(simplifyVector = TRUE)
 
 # Data Cleaning
-resp_json_df <- janitor::row_to_names(resp_json_df, 1) |> # Move 1st row to Names
-  as.data.frame() |> # Convert Matrix to Data Frame
-  mutate(across(starts_with('B'), as.numeric)) # Convert all variables that start with B to numeric
+#resp_json_df <- janitor::row_to_names(resp_json_df, 1) |> # Move 1st row to Names
+#  as.data.frame() |> # Convert Matrix to Data Frame
+#  mutate(across(starts_with('B'), as.numeric)) # Convert all variables that start with B to numeric
 
-head(resp_json_df)
+#head(resp_json_df)
 ```
 
 To learn more about JSON, consult the following readings:
@@ -224,10 +224,10 @@ Let's start at the top of the API documentation page to see how to navigate this
 
 The following request searches for board games, board game accessories, and board game expansions with the words "mystery" and "curse" in the title:
 
-```{r httr2_bgg}
-req <- request("https://boardgamegeek.com/xmlapi2") |> 
-    req_url_path_append("search") |> 
-    req_url_query(query = I("mystery+curse"), type = I("boardgame,boardgameaccessory,boardgameexpansion"))
+```{r}
+#req <- request("https://boardgamegeek.com/xmlapi2") |> 
+#    req_url_path_append("search") |> 
+#    req_url_query(query = I("mystery+curse"), type = I("boardgame,boardgameaccessory,boardgameexpansion"))
 ```
 
 When we use `req_perform()`, we see from `Content-Type` that the format of the response is something called XML. We can navigate to the request URL to see the structure of this output.
